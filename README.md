@@ -117,6 +117,7 @@ There is a string, , of lowercase English letters that is repeated infinitely ma
 **Example**
 
 **s = 'abcac'**
+
 **n=10**
 
 The substring we consider is **abcacabcac**, the first **10** characters of the infinite string. There are  **4** occurrences of a in the substring.

@@ -1,0 +1,12 @@
+{
+  "name": "warmup-js",
+  "version": "1.0.0",
+  "description": "warmup-xzjuanc",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JUAN CARLOS RODRIGUEZ CHAVEZ",
+  "license": "ISC"
+}
