@@ -30,3 +30,12 @@ The first line contains an integer **n**, the number of socks represented in **a
 The second line contains  **n** space-separated integers, **ar[i]**, the colors of the socks in the pile.
 
 **Constraints**
+
+* **1 <= n <= 100**
+* **1 <= ar[i] <= 100 where 0 <= i < n**
+
+**Sample input**
+n=9, arr = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+
+**Sample output**
+3
