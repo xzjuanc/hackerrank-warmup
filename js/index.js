@@ -7,3 +7,11 @@ console.log('TEST 2');
 warmup.sockMerchant(9,[10, 20, 20, 10, 10, 30, 50, 10, 20]);
 
 console.log('****REPEATED STRING****');
+console.log('TEST 1');
+warmup.repeatedString('aba',10);
+console.log('TEST 2');
+warmup.repeatedString('aba',16);
+console.log('TEST 3');
+warmup.repeatedString('aababa',3);
+console.log('TEST 4')
+warmup.repeatedString('d',590826798023);
