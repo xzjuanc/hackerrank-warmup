@@ -103,21 +103,26 @@ const diskSpaceAnalysis = (x,space)=>{
     console.log('length array: ',space.length);
 
     let arraymin=[],arrayposicion=[];
-    for (let i=0; i< space.length; i++){
-        if(i+x <= space.length){
-            arrayposicion.push(i);
+    
+    if(x <= space.length){
+        
+        for (let i=0; i< space.length; i++){
+            if(i+x <= space.length){
+                arrayposicion.push(i);
+            }
         }
+
+        console.log('array position', arrayposicion);
+
+        for (let j=0; j < arrayposicion.length;j++){
+            console.log('array segment: ' +j,space.slice(arrayposicion[j],arrayposicion[j] + x));
+            arraymin.push(Math.min.apply(null,space.slice(arrayposicion[j],arrayposicion[j] + x)));
+        }
+
+        console.log('array minimum: ',arraymin);
+        console.log('value maximum array: ', Math.max.apply(null,arraymin));
     }
-
-    console.log('array position', arrayposicion);
-
-    for (let j=0; j < arrayposicion.length;j++){
-        console.log('array segment: ' +j,space.slice(arrayposicion[j],arrayposicion[j] + x));
-        arraymin.push(Math.min.apply(null,space.slice(arrayposicion[j],arrayposicion[j] + x)));
-    }
-
-    console.log('array minimum: ',arraymin);
-    console.log('value maximum array: ', Math.max.apply(null,arraymin));
+    
     return Math.max.apply(null,arraymin);
 }
 

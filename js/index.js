@@ -39,3 +39,6 @@ console.log('TEST 1');
 warmup.diskSpaceAnalysis(5,[8,2,4,6]);
 console.log('TEST 2');
 warmup.diskSpaceAnalysis(4,[8,2,4,6]);
+console.log('TEST 3');
+warmup.diskSpaceAnalysis(2,[8,2,4,6]);
+
