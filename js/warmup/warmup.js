@@ -67,8 +67,39 @@ const jumpingOnClouds = (c) => {
 
 }
 
+const countingValleys = (steps,path) =>{
+    let arpath = path.split(''),countValleys = 0,countpath = 0,valleystatus = false;
+
+    if(steps>= 2 && steps <= Math.pow(10,6) && steps == path.length){
+        for (let x = 0; x < arpath.length; x++){
+
+            if(arpath[x] == 'U')
+                countpath++;
+                
+            if(arpath[x] == 'D')
+                countpath--;
+
+            if(countpath < 0 && !valleystatus)
+                valleystatus = true;
+
+            if(countpath == 0 && valleystatus){
+                countValleys++;
+                valleystatus = false;
+            }
+
+            
+        }
+    }
+
+    console.log('steps: ', steps);
+    console.log('path: ', path);
+    console.log('countValleys: ', countValleys)
+    return countValleys;
+}
+
 module.exports ={
     sockMerchant,
     repeatedString,
-    jumpingOnClouds
+    jumpingOnClouds,
+    countingValleys
 }
