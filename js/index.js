@@ -34,3 +34,8 @@ warmup.countingValleys(100,'DDUUDDDUDUUDUDDDUUDDUDDDUDDDUDUUDDUUDDDUDDDUDDDUUUDU
 console.log('TEST 5');
 warmup.countingValleys(10,'DUDDDUUDUU');
 
+console.log('****DISK SPACE ANALYSIS****');
+console.log('TEST 1');
+warmup.diskSpaceAnalysis(5,[8,2,4,6]);
+console.log('TEST 2');
+warmup.diskSpaceAnalysis(4,[8,2,4,6]);
