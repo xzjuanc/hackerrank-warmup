@@ -6,6 +6,12 @@ warmup.sockMerchant(100,[10, 20, 20, 10, 10, 30, 50, 10, 20]);
 console.log('TEST 2');
 warmup.sockMerchant(9,[10, 20, 20, 10, 10, 30, 50, 10, 20]);
 
+console.log('****JUMPING ON THE CLOUDS****');
+console.log('TEST 1');
+warmup.jumpingOnClouds([0,0,1,0,0,1,0]);
+console.log('TEST 2');
+warmup.jumpingOnClouds([0,0,0,0,1,0]);
+
 console.log('****REPEATED STRING****');
 console.log('TEST 1');
 warmup.repeatedString('aba',10);
