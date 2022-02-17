@@ -454,7 +454,9 @@ Second
 **Explanation**
 
 Explanation for **1st** testcase:
+
 The first player will shift one coin from **square(2)** to **square(0)** . Hence, the second player is left with the squares **[1,2,2,0,6]**. Now whatever be his/her move is, the first player can always nullify the change by shifting a coin to the same square where he/she shifted it. Hence the last move is always played by the first player, so he wins.
 
 Explanation for **2nd** testcase:
+
 There are no coins in any of the squares so the first player cannot make any move, hence second player wins.
