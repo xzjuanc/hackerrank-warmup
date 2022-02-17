@@ -61,3 +61,14 @@ console.log('TEST 3'),
 arrays.arrayLeftRotation('20 10','41 73 89 7 10 1 59 58 84 77 77 97 58 1 86 58 26 10 86 51');
 console.log('TEST 3'),
 arrays.arrayLeftRotation('5 4','1 2 3 4 5');
+
+console.log('****FIND DIGITS****');
+console.log('3 2 1 raaaaaaaaa');
+arrays.findDigits(12345);
+arrays.findDigits(124);
+arrays.findDigits(111);
+
+console.log('****FIND DIGITS****');
+console.log('3 2 1 raaaaaaaaa');
+arrays.nimbleGame([0,2,3,0,6]);
+arrays.nimbleGame([0,0,0,0]);

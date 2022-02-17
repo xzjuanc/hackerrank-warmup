@@ -17,6 +17,71 @@ const arrayLeftRotation = (a,d) =>{
     return array;
 }
 
+const findDigits = (n)=>{
+    const array = Array.from(String(n), Number);
+    let divisorcount = 0;
+    console.log('array',array);
+    console.log('numero',n);
+    console.log('len',array.length)
+
+    for(let x = 0; x < array.length; x++){
+        if(array[x] != 0)
+            if( n % array[x] == 0)
+                divisorcount++;
+    }
+    console.log(divisorcount);
+    return divisorcount;
+}
+
+const minimumDistances = (a)=>{
+    let map = new Map(), found = false,
+    minDistance = Number.MAX_VALUE;
+    for (let i= 0; i < array.length; i++)
+    {
+        let value = array[i];
+        if (map.has(value))
+        {
+            let prevIndex = map.get(value),
+            distance = Math.abs(i - prevIndex);
+            found = true;
+            if (distance < minDistance)
+                minDistance = distance;
+
+        }
+        else 
+            map.set(value,i);
+
+    }
+
+    if (found)
+    {
+        return minDistance;
+    }
+    return -1;
+
+}
+
+const nimbleGame = (s) =>{
+    let sum = 0, result = "";
+    for (let x=0; x < s.length; x++)
+    {
+        if (s[x] % 2 == 1)
+            sum ^= x;
+
+    }
+    
+    if (sum > 0)
+        result = "First";
+    else 
+        result = "Second";
+    
+    return result;
+}
+
 module.exports={
-    arrayLeftRotation
+    arrayLeftRotation,
+    findDigits,
+    minimumDistances,
+    nimbleGame
+
 }

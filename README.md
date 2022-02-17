@@ -283,3 +283,142 @@ The second line contains **n** space-separated integers, each an **a[i]**.
 
 When we perform  **d=4** left rotations, the array undergoes the following sequence of changes:
 **[1,2,3,4,5]** -> **[2,3,4,5,1]** -> **[3,4,5,1,2]** -> **[4,5,1,2,3]** -> **[5,1,2,3,4]**
+
+
+
+
+
+**Find Digits**
+An integer  is a divisor of an integer  if the remainder of .
+
+Given an integer, for each digit that makes up the integer determine whether it is a divisor. Count the number of divisors occurring within the integer.
+
+Example
+
+Check whether ,  and  are divisors of . All 3 numbers divide evenly into  so return .
+
+
+Check whether , , and  are divisors of . All 3 numbers divide evenly into  so return .
+
+
+Check whether  and  are divisors of .  is, but  is not. Return .
+
+Function Description
+
+Complete the findDigits function in the editor below.
+
+findDigits has the following parameter(s):
+
+int n: the value to analyze
+Returns
+
+int: the number of digits in  that are divisors of 
+Input Format
+
+The first line is an integer, , the number of test cases.
+The  subsequent lines each contain an integer, .
+
+Constraints
+
+
+
+Sample Input
+
+2
+12
+1012
+Sample Output
+
+2
+3
+Explanation
+
+The number  is broken into two digits,  and . When  is divided by either of those two digits, the remainder is  so they are both divisors.
+
+The number  is broken into four digits, , , , and .  is evenly divisible by its digits , , and , but it is not divisible by  as division by zero is undefined.
+
+
+**Minimum Distances**
+The distance between two array values is the number of indices between them. Given , find the minimum distance between any pair of equal elements in the array. If no such value exists, return .
+
+Example
+
+There are two matching pairs of values:  and . The indices of the 's are  and , so their distance is . The indices of the 's are  and , so their distance is . The minimum distance is .
+
+Function Description
+
+Complete the minimumDistances function in the editor below.
+
+minimumDistances has the following parameter(s):
+
+int a[n]: an array of integers
+Returns
+
+int: the minimum distance found or  if there are no matching elements
+Input Format
+
+The first line contains an integer , the size of array .
+The second line contains  space-separated integers .
+
+Constraints
+
+Output Format
+
+Print a single integer denoting the minimum  in . If no such value exists, print .
+
+Sample Input
+
+STDIN           Function
+-----           --------
+6               arr[] size n = 6
+7 1 3 4 1 7     arr = [7, 1, 3, 4, 1, 7]
+Sample Output
+
+3
+Explanation
+There are two pairs to consider:
+
+ and  are both , so .
+ and  are both , so .
+The answer is .
+
+**Nimble Game**
+Two people are playing Nimble! The rules of the game are:
+
+The game is played on a line of  squares, indexed from  to . Each square  (where ) contains  coins. For example:
+nimble.png
+The players move in alternating turns. During each move, the current player must remove exactly  coin from square  and move it to square  if and only if .
+The game ends when all coins are in square  and nobody can make a move. The first player to have no available move loses the game.
+Given the value of  and the number of coins in each square, determine whether the person who wins the game is the first or second person to move. Assume both players move optimally.
+
+Input Format
+
+The first line contains an integer, , denoting the number of test cases.
+Each of the  subsequent lines defines a test case. Each test case is described over the following two lines:
+
+An integer, , denoting the number of squares.
+ space-separated integers, , where each  describes the number of coins at square .
+Constraints
+
+Output Format
+
+For each test case, print the name of the winner on a new line (i.e., either  or ).
+
+Sample Input
+
+2
+5
+0 2 3 0 6
+4
+0 0 0 0
+Sample Output
+
+First
+Second
+Explanation
+
+Explanation for  testcase:
+The first player will shift one coin from  to . Hence, the second player is left with the squares . Now whatever be his/her move is, the first player can always nullify the change by shifting a coin to the same square where he/she shifted it. Hence the last move is always played by the first player, so he wins.
+
+Exlanation for  testcase:
+There are no coins in any of the squares so the first player cannot make any move, hence second player wins.
