@@ -323,18 +323,22 @@ The first line is an integer, **t** , the number of test cases.
 The **t** subsequent lines each contain an integer, **n**.
 
 **Constraints**
-1<=t<=15
-0<n< 10^9
+
+* 1<=t<=15
+* 0<n< 10^9
 
 **Sample Input**
 
 2
+
 12
+
 1012
 
 **Sample Output**
 
 2
+
 3
 
 **Explanation**
@@ -383,6 +387,7 @@ Print a single integer denoting the minimum d[i,j] in **a**. If no such value ex
 STDIN           Function
 -----           --------
 6               arr[] size n = 6
+
 7 1 3 4 1 7     arr = [7, 1, 3, 4, 1, 7]
 
 **Sample Output**
@@ -431,9 +436,13 @@ For each test case, print the name of the winner on a new line (i.e., **First** 
 **Sample Input**
 
 2
+
 5
+
 0 2 3 0 6
+
 4
+
 0 0 0 0
 
 **Sample Output**
