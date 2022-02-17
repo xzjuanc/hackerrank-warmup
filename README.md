@@ -286,139 +286,165 @@ When we perform  **d=4** left rotations, the array undergoes the following seque
 
 
 
-
-
-**Find Digits**
-An integer  is a divisor of an integer  if the remainder of .
+# Find Digits
+An integer  is a divisor of an integer  if the remainder of **n / d = 0**.
 
 Given an integer, for each digit that makes up the integer determine whether it is a divisor. Count the number of divisors occurring within the integer.
 
 Example
 
-Check whether ,  and  are divisors of . All 3 numbers divide evenly into  so return .
+**n = 124**
 
+Check whether **1**,**2** and **4**  are divisors of **124**. All 3 numbers divide evenly into **124**  so return **3**.
 
-Check whether , , and  are divisors of . All 3 numbers divide evenly into  so return .
+**n = 111**
 
+Check whether **1**,**1**, and **1**  are divisors of **111**. All 3 numbers divide evenly into **111** so return **3**.
 
-Check whether  and  are divisors of .  is, but  is not. Return .
+**n = 10**
 
-Function Description
+Check whether **1** and **0** are divisors of **10**. **1** is, but **0** is not. Return **1**.
+
+**Function Description**
 
 Complete the findDigits function in the editor below.
 
 findDigits has the following parameter(s):
 
-int n: the value to analyze
-Returns
+* int n: the value to analyze
 
-int: the number of digits in  that are divisors of 
-Input Format
+**Returns**
 
-The first line is an integer, , the number of test cases.
-The  subsequent lines each contain an integer, .
+* int: the number of digits in  that are divisors of 
 
-Constraints
+**Input Format**
 
+The first line is an integer, **t** , the number of test cases.
+The **t** subsequent lines each contain an integer, **n**.
 
+**Constraints**
+1<=t<=15
+0<n< 10^9
 
-Sample Input
+**Sample Input**
 
 2
 12
 1012
-Sample Output
+
+**Sample Output**
 
 2
 3
-Explanation
 
-The number  is broken into two digits,  and . When  is divided by either of those two digits, the remainder is  so they are both divisors.
+**Explanation**
 
-The number  is broken into four digits, , , , and .  is evenly divisible by its digits , , and , but it is not divisible by  as division by zero is undefined.
+The number **12** is broken into two digits, **1** and **2** . When **12** is divided by either of those two digits, the remainder is **0** so they are both divisors.
+
+The number **1012** is broken into four digits, **1, 0, 1, and 2**.  is evenly divisible by its digits **1, 1, and 2**, but it is not divisible by **0** as division by zero is undefined.
 
 
-**Minimum Distances**
-The distance between two array values is the number of indices between them. Given , find the minimum distance between any pair of equal elements in the array. If no such value exists, return .
+# Minimum Distances
 
-Example
+The distance between two array values is the number of indices between them. Given , find the minimum distance between any pair of equal elements in the array. If no such value exists, return **-1**.
 
-There are two matching pairs of values:  and . The indices of the 's are  and , so their distance is . The indices of the 's are  and , so their distance is . The minimum distance is .
+**Example**
 
-Function Description
+**a=[3,2,1,2,3]**
+
+There are two matching pairs of values: **3** and **2**. The indices of the **3's** are **i=0** and **j=4**, so their distance is **d[i,j] = |j-i| = 4**. The indices of the **2's** are **i=1** and **j=4**, so their distance is **d[i,j] = |j-i| = 2**. The minimum distance is **2**.
+
+**Function Description**
 
 Complete the minimumDistances function in the editor below.
 
 minimumDistances has the following parameter(s):
 
-int a[n]: an array of integers
+* int a[n]: an array of integers
 Returns
 
-int: the minimum distance found or  if there are no matching elements
-Input Format
+* int: the minimum distance found or **-1** if there are no matching elements
 
-The first line contains an integer , the size of array .
-The second line contains  space-separated integers .
+**Input Format**
 
-Constraints
+The first line contains an integer **n**, the size of array **a**.
+The second line contains **n** space-separated integers **a[i]**.
 
-Output Format
+**Constraints**
+* 1 <= n <= 10^3
+* 1 <= a[i] <= 10^5
 
-Print a single integer denoting the minimum  in . If no such value exists, print .
+**Output Format**
 
-Sample Input
+Print a single integer denoting the minimum d[i,j] in **a**. If no such value exists, print **-1**.
+
+**Sample Input**
 
 STDIN           Function
 -----           --------
 6               arr[] size n = 6
 7 1 3 4 1 7     arr = [7, 1, 3, 4, 1, 7]
-Sample Output
+
+**Sample Output**
 
 3
-Explanation
+
+**Explanation**
 There are two pairs to consider:
 
- and  are both , so .
- and  are both , so .
-The answer is .
+* a[1] and a[4] are both 1, so d[1,4]=|1-4|=3.
+* a[0] and a[5] are both 7, so d[0,5]=|0-5|=5.
 
-**Nimble Game**
+The answer is min(3,5) = 3.
+
+# Nimble Game
 Two people are playing Nimble! The rules of the game are:
 
-The game is played on a line of  squares, indexed from  to . Each square  (where ) contains  coins. For example:
-nimble.png
-The players move in alternating turns. During each move, the current player must remove exactly  coin from square  and move it to square  if and only if .
-The game ends when all coins are in square  and nobody can make a move. The first player to have no available move loses the game.
-Given the value of  and the number of coins in each square, determine whether the person who wins the game is the first or second person to move. Assume both players move optimally.
+* The game is played on a line of **n** squares, indexed from **0**  to **n-1** . Each square **i (where 0<= i < n)** contains c(i)  coins. For example:
 
-Input Format
+![alt text](https://s3.amazonaws.com/hr-challenge-images/18624/1457422376-06a45e063f-nimple.png) 
 
-The first line contains an integer, , denoting the number of test cases.
-Each of the  subsequent lines defines a test case. Each test case is described over the following two lines:
 
-An integer, , denoting the number of squares.
- space-separated integers, , where each  describes the number of coins at square .
-Constraints
+* The players move in alternating turns. During each move, the current player must remove exactly **1** coin from square **i** and move it to square **j** if and only if **0<=j<i**.
 
-Output Format
+* The game ends when all coins are in square **0** and nobody can make a move. The first player to have no available move loses the game.
 
-For each test case, print the name of the winner on a new line (i.e., either  or ).
+Given the value of **n**  and the number of coins in each square, determine whether the person who wins the game is the first or second person to move. Assume both players move optimally.
 
-Sample Input
+**Input Format**
+
+The first line contains an integer, **T**, denoting the number of test cases.
+Each of the **2T** subsequent lines defines a test case. Each test case is described over the following two lines:
+
+1. An integer, **n**, denoting the number of squares.
+2. **n** space-separated integers, **c(0),c(1),...,c(n)-1 where each c(i)** describes the number of coins at square **i**.
+
+**Constraints**
+* 1 <= T <= 10^4
+* 1 <= n <= 100
+* 0 <= c(i) <= 10^9
+
+**Output Format**
+
+For each test case, print the name of the winner on a new line (i.e., **First** either  or **Second**).
+
+**Sample Input**
 
 2
 5
 0 2 3 0 6
 4
 0 0 0 0
-Sample Output
+
+**Sample Output**
 
 First
 Second
-Explanation
 
-Explanation for  testcase:
-The first player will shift one coin from  to . Hence, the second player is left with the squares . Now whatever be his/her move is, the first player can always nullify the change by shifting a coin to the same square where he/she shifted it. Hence the last move is always played by the first player, so he wins.
+**Explanation**
 
-Exlanation for  testcase:
+Explanation for **1st** testcase:
+The first player will shift one coin from **square(2)** to **square(0)** . Hence, the second player is left with the squares **[1,2,2,0,6]**. Now whatever be his/her move is, the first player can always nullify the change by shifting a coin to the same square where he/she shifted it. Hence the last move is always played by the first player, so he wins.
+
+Explanation for **2nd** testcase:
 There are no coins in any of the squares so the first player cannot make any move, hence second player wins.
