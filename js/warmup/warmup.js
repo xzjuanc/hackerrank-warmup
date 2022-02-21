@@ -87,7 +87,7 @@ const countingValleys = (steps,path) =>{
                 valleystatus = false;
             }
 
-            
+            //padStart
         }
     }
 
@@ -131,5 +131,6 @@ module.exports ={
     repeatedString,
     jumpingOnClouds,
     countingValleys,
-    diskSpaceAnalysis
+    diskSpaceAnalysis,
+    
 }

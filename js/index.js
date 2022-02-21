@@ -70,5 +70,46 @@ arrays.findDigits(111);
 
 console.log('****FIND DIGITS****');
 console.log('3 2 1 raaaaaaaaa');
+console.log('TEST 1');
 arrays.nimbleGame([0,2,3,0,6]);
+console.log('TEST 2');
 arrays.nimbleGame([0,0,0,0]);
+console.log('TEST 3');
+arrays.nimbleGame([1,1,2,2,2,4,4,4,4,4,4]);
+
+
+console.log('Mini-Max SUM');
+console.log('TEST 1');
+arrays.miniMaxSum([1,2,3,4,5]);
+console.log('TEST 2');
+arrays.miniMaxSum([5,5,5,5,5]);
+
+console.log('Birthday Cake Candles');
+console.log('TEST 1');
+arrays.birthdayCakeCandles([3,2,1,3]);
+
+console.log('Grading Students');
+console.log('TEST 1');
+arrays.gradingStudents([4,73,67,38,33]);
+
+
+console.log('Time Conversion');
+console.log('TEST 1');
+arrays.timeConversion("07:05:45PM");
+arrays.timeConversion("12:40:22AM");
+arrays.timeConversion("12:00:00AM");
+arrays.timeConversion("12:45:54PM");
+
+console.log('Divisible Sum Pairs');
+console.log('TEST 1');
+arrays.divisibleSumPairs(6,3,[1,3,2,6,1,2]);
+
+console.log('Breaking Records');
+console.log('TEST 1');
+arrays.breakingRecords([10,5,20,20,4,5,2,25,1]);
+arrays.breakingRecords([3,4,21,36,10,28,35,5,24,42]);
+arrays.breakingRecords([17,45,41,60,17,41,76,43,51,40,89,92,34,6,64,7,37,81,32,50]);
+arrays.breakingRecords([100,45,41,60,17,41,45,43,100,40,89,92,34,6,64,7,37,81,32,50]);
+
+
+

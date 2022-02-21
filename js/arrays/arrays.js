@@ -57,6 +57,7 @@ const minimumDistances = (a)=>{
     {
         return minDistance;
     }
+    
     return -1;
 
 }
@@ -65,23 +66,185 @@ const nimbleGame = (s) =>{
     let sum = 0, result = "";
     for (let x=0; x < s.length; x++)
     {
-        if (s[x] % 2 == 1)
+        if (s[x] % 2 == 1){
+            console.log('iteration: ', x);
+            console.log('sum before: ', sum);
+            console.log('sx: ', s[x]);
+            console.log('resto: ', s[x]% 2);
+            console.log('valor x: ', x);
             sum ^= x;
-
+            console.log('sum after: ', sum);
+        }   
     }
     
+    console.log('sum', sum);
     if (sum > 0)
         result = "First";
     else 
         result = "Second";
     
+    console.log(result);
     return result;
 }
+
+const minimumBribes = (q)=> {
+
+}
+
+const minimumSwaps = (arr) => {
+    let min = Math.min.apply(null,arr),
+    max = Math.min.apply(null,arr);
+
+    for(let x= 0;x < arr; x++){
+
+    }
+    console.log('min', min);
+    console.log('max',max);
+    
+}
+
+const miniMaxSum = (arr) => {
+    // Write your code here
+    let max = Math.max(...arr),
+    min = Math.min(...arr),
+    indexmin = arr.indexOf(min),
+    indexmax = arr.indexOf(max),
+    arrmin = [...arr],
+    arrmax = [...arr],
+    summin =0, summax = 0;
+    
+    arrmax.splice(indexmin, 1);
+
+    arrmin.splice(indexmax, 1);
+
+    summin = arrmin.reduce((a,b)=> a+b,0);
+    
+    summax = arrmax.reduce((a,b)=> a+b,0);
+    
+    console.log(summin + ' ' + summax);
+}
+
+
+const birthdayCakeCandles = (candles) => {
+    // Write your code here
+    let max = Math.max(candles),
+    count = 0;
+    
+    console.log(candles);
+    console.log('raaa ',max);
+    for(let x =0; x < candles.length; x++){
+        if(candles[x] == max)
+            count++;
+    }
+    
+    console.log(count);
+    return count;
+}
+
+const gradingStudents = (grades)=> {
+    // Write your code here
+    let rnumber= 5, nextround = 0;
+
+    for (let x=0; x < grades.length; x++){
+        if (grades[x] >= 38 ){
+            nextround = Math.ceil(grades[x] /rnumber) * rnumber;
+            grades[x] = nextround - grades[x] < 3 ? nextround : grades[x];
+        }    
+    }
+
+    return grades;
+}
+
+const timeConversion = (s)=> {
+    // Write your code here
+    let flag = s.slice(-2),
+    ts = s.replace('AM','').replace('PM','').split(':'),
+    h = ts[0], m = ts[1], sx= ts[2],
+    hs= "",tt="";
+
+    if(flag == "AM"){
+        if(parseInt(h) == 12)
+            hs = "00";
+        else
+            hs = h;
+    }else{
+        if(parseInt(h) == 12)
+            hs = h;
+        else
+            hs = (12 + parseInt(h)).toString();
+        
+    }
+        
+    
+    tt = hs +":" + m + ":" + sx;
+
+    console.log('conversion', tt)
+    return tt;
+}
+
+const divisibleSumPairs = (n, k, ar)=> {
+    // Write your code here
+    let countsumpair = 0;
+
+    if(n>= 2 && n <= 100 && k >= 1 && k<= 100){
+        for(let x= 0; x < n ; x++){
+            for(let y=x+1; y < n; y++){
+                if((ar[x] + ar[y]) % k == 0)
+                    countsumpair++;
+            }
+        }
+    }
+
+    return countsumpair;
+}
+
+const breakingRecords = (scores) => {
+    // Write your code here
+    let countmax= 0, countmin = 0, result =[],
+    max = Number.MIN_VALUE,
+    min = Number.MAX_VALUE;
+
+    for(let x = 0; x < scores.length; x++){
+        if(x== 0){
+            if (scores[x] > max)
+                max = scores[x];
+
+            if (scores[x] < min)
+                min = scores[x];
+        }
+        
+        if(x>0){
+            if(scores[x] > scores[x-1] && scores[x] > max){
+                max = scores[x];
+                countmax++;
+            }
+            
+            if(scores[x] < scores[x-1] && scores[x] < min){
+                min = scores[x];
+                countmin++;
+            }     
+        }
+    }
+    result.push(countmax);
+    result.push(countmin);
+    
+    console.log(result);
+    return result;
+}
+
+
+
 
 module.exports={
     arrayLeftRotation,
     findDigits,
     minimumDistances,
-    nimbleGame
+    nimbleGame,
+    miniMaxSum,
+    birthdayCakeCandles,
+    gradingStudents,
+    timeConversion,
+    divisibleSumPairs,
+    breakingRecords
 
 }
