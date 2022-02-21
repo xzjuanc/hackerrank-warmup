@@ -232,6 +232,68 @@ const breakingRecords = (scores) => {
     return result;
 }
 
+const migratoryBirds = (arr) =>{
+    // Write your code here
+    let map = new Map(), array = [];
+
+    for (let x = 0; x < arr.length; x++){
+        let value = arr[x];
+
+        if(map.has(value)){
+            let c = map.get(value);
+            c.count++;
+            map.set(value,{id:value, count: c.count});
+        }
+        else{
+            map.set(value,{id:value, count: 1});
+        }
+    }
+
+    map.forEach(( item)=>{
+        array.push(item);
+    });
+
+    const maxcount = array.reduce( (a,b)=>{
+        return (a.count > b.count) ? a : b;
+    }).count;
+
+    const filter = array.filter(a => a.count == maxcount);
+
+    const minarray = filter.reduce((a,b)=>{
+        return a.id < b.id ? a : b;
+    })
+
+    return minarray.id;
+
+}
+
+function pickingNumbers(a) {
+    // Write your code here
+    let arraycount = [],i = 0, max = 0;
+    for(let x= 0; x < a.length; x++){
+        arraycount[i]  = 1;
+        for(y = x+1; y < a.length; y++){
+            if(Math.abs(a[y] - a[x]) >= 0 && Math.abs(a[y] - a[x]) <= 1 ){
+                //console.log('x ', x);
+                //console.log('y ', y);
+                //console.log('current: ', a[x] );
+                //console.log('after: ', a[y] );
+                
+                arraycount[i]++;
+            }
+                
+        }
+        i++;
+    }
+
+    //console.log(arraycount);
+    
+    if(arraycount.length > 0)
+        max = Math.max(...arraycount);
+    
+    console.log(max)
+    return max;
+}
 
 
 
@@ -245,6 +307,8 @@ module.exports={
     gradingStudents,
     timeConversion,
     divisibleSumPairs,
-    breakingRecords
+    breakingRecords,
+    migratoryBirds,
+    pickingNumbers
 
 }
